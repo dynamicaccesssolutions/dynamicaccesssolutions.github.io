@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>eLOQ Enterprise</title>
+
+	<meta charset="utf-8">
+	<meta name="author" content="Dynamic Access Solutions">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="common.css">
+	<link rel="stylesheet" href="dashboard.css">
+
+	<script src="https://code.iconify.design/iconify-icon/2.2.0/iconify-icon.min.js"></script>
+	
+</head>
+<body>
+	<header>
+		<img src="eLOQ_logo_white.png" alt="eLOQ logo">
+		<nav id="header-nav" role="group">
+			<button href="#"><iconify-icon inline icon="ph:sign-out"></iconify-icon><span>Log out</span></button>
+			<button href="#"><iconify-icon inline icon="ph:sliders-horizontal"></iconify-icon><span>Settings</span></button>
+			<button href="#"><iconify-icon inline icon="ph:bell"></iconify-icon><span>Notifications</span></button>
+		</nav>
+	</header>
+
+	<nav id="sidebar">
+		<div id="upper-nav">
+			<a href="#"><iconify-icon inline icon="ph:house"></iconify-icon><span>Dashboard</span></a>
+			<a href="#" class="cur" aria-current="page"><iconify-icon inline icon="ph:users-three"></iconify-icon><span>Users</span></a>
+			<a href="#"><iconify-icon inline icon="ph:lock-key-open"></iconify-icon><span>Locks</span></a>
+			<a href="#"><iconify-icon inline icon="ph:calendar-dots"></iconify-icon><span>Schedules</span></a>
+			<a href="#"><iconify-icon inline icon="ph:key"></iconify-icon><span>Access</span></a>
+			<a href="#"><iconify-icon inline icon="ph:chart-bar"></iconify-icon><span>Reports</span></a>
+			<a href="#"><iconify-icon inline icon="ph:device-mobile-camera"></iconify-icon><span>Mobile App</span></a>
+			<a href="#"><iconify-icon inline icon="ph:device-tablet"></iconify-icon><span>Terminals</span></a>
+			<a href="#"><iconify-icon inline icon="ph:wrench"></iconify-icon><span>Key Tools</span></a>
+		</div>
+		<div id="lower-nav">
+			<a href="#"><iconify-icon inline icon="ph:tree-structure"></iconify-icon><span>Organization</span></a>
+			<a href="#"><iconify-icon inline icon="ph:shield-chevron"></iconify-icon><span>Administrators</span></a>
+			<a href="#"><iconify-icon inline icon="ph:gear"></iconify-icon><span>Site Settings</span></a>
+			<a href="#"><iconify-icon inline icon="ph:question-mark"></iconify-icon><span>Help</span></a>
+		</div>
+	</nav>
+
+	<main>
+		<div class="main-tab-bar" role="tablist">
+			<button id="tab-1" class="cur" role="tab" aria-selected="true" aria-controls="panel-1"><iconify-icon inline icon="ph:user-check-light"></iconify-icon>Active Users</button>
+			<button id="tab-2" class="" role="tab" aria-selected="false" aria-controls="panel-2"><iconify-icon inline icon="ph:users-light"></iconify-icon>User Groups</button>
+			<button id="tab-3" class="" role="tab" aria-selected="false" aria-controls="panel-3"><iconify-icon inline icon="ph:user-minus-light"></iconify-icon>Inactive Users</button>
+		</div>
+
+		<div id="panel-1" class="main-tab-body cur" role="tabpanel" aria-labelledby="tab-1">
+			<div class="content-toolbar" role="toolbar">
+				<button title="create new user"><iconify-icon inline icon="ph:plus"></iconify-icon><span>New</span></button>
+				<button title="edit selected user"><iconify-icon inline icon="ph:note-pencil"></iconify-icon><span>Edit</span></button>
+				<button title="save changes"><iconify-icon inline icon="ph:floppy-disk"></iconify-icon><span>Save</span></button>
+				<button title="delete selected user"><iconify-icon inline icon="ph:trash"></iconify-icon><span>Delete</span></button>
+				<button title="refresh user list"><iconify-icon inline icon="ph:arrow-clockwise"></iconify-icon><span>Refresh</span></button>
+				<form class="search-box" role="search">
+					<input type="search" placeholder="search..." aria-label="search active users">
+					<button aria-label="submit search"><iconify-icon inline icon="ph:magnifying-glass"></iconify-icon></button>
+				</form>
+			</div>
+			<div class="main-tab-content">
+				<table class="record-list" aria-label="User selection">
+					<thead>
+						<tr>
+							<th scope="col" style="width: 0px;"><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></th>
+							<th scope="col">Name</th>
+							<th scope="col">Domain</th>
+							<th scope="col">Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Jason Healy</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Julie Froggatt</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-warning"><iconify-icon inline icon="ph:warning-circle-fill"></iconify-icon>&nbsp;Update due</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Andrew Balchin</th>
+							<td>Warehouse</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr class="cur">
+							<td><iconify-icon class="checkbox-checked" inline icon="ph:check-square-fill"></iconify-icon></td>
+							<th scope="row">Kelly Healy</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-bad"><iconify-icon inline icon="ph:x-circle-fill"></iconify-icon>&nbsp;Expired</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Greig Munson</th>
+							<td>Development</td>
+							<td><span class="user-status status-warning"><iconify-icon inline icon="ph:warning-circle-fill"></iconify-icon>&nbsp;Update due</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Richard Goodall</th>
+							<td>Warehouse</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Thomas Healy</th>
+							<td>Warehouse</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Graham Pipes</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-unknown"><iconify-icon inline icon="ph:question-fill"></iconify-icon>&nbsp;No key</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Emma Mulhall</th>
+							<td>Development</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Jordan Farrar</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-alert"><iconify-icon inline icon="ph:clock-fill"></iconify-icon>&nbsp;Out of sync</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Jason Healy</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Julie Froggatt</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-warning"><iconify-icon inline icon="ph:warning-circle-fill"></iconify-icon>&nbsp;Update due</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Andrew Balchin</th>
+							<td>Warehouse</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Kelly Healy</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-bad"><iconify-icon inline icon="ph:x-circle-fill"></iconify-icon>&nbsp;Expired</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Greig Munson</th>
+							<td>Development</td>
+							<td><span class="user-status status-warning"><iconify-icon inline icon="ph:warning-circle-fill"></iconify-icon>&nbsp;Update due</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Richard Goodall</th>
+							<td>Warehouse</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Thomas Healy</th>
+							<td>Warehouse</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Graham Pipes</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-unknown"><iconify-icon inline icon="ph:question-fill"></iconify-icon>&nbsp;No key</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Emma Mulhall</th>
+							<td>Development</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Jordan Farrar</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-alert"><iconify-icon inline icon="ph:clock-fill"></iconify-icon>&nbsp;Out of sync</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Jason Healy</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Julie Froggatt</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-warning"><iconify-icon inline icon="ph:warning-circle-fill"></iconify-icon>&nbsp;Update due</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Andrew Balchin</th>
+							<td>Warehouse</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Kelly Healy</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-bad"><iconify-icon inline icon="ph:x-circle-fill"></iconify-icon>&nbsp;Expired</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Greig Munson</th>
+							<td>Development</td>
+							<td><span class="user-status status-warning"><iconify-icon inline icon="ph:warning-circle-fill"></iconify-icon>&nbsp;Update due</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Richard Goodall</th>
+							<td>Warehouse</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Thomas Healy</th>
+							<td>Warehouse</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Graham Pipes</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-unknown"><iconify-icon inline icon="ph:question-fill"></iconify-icon>&nbsp;No key</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Emma Mulhall</th>
+							<td>Development</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Jordan Farrar</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-alert"><iconify-icon inline icon="ph:clock-fill"></iconify-icon>&nbsp;Out of sync</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Jason Healy</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Julie Froggatt</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-warning"><iconify-icon inline icon="ph:warning-circle-fill"></iconify-icon>&nbsp;Update due</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Andrew Balchin</th>
+							<td>Warehouse</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Kelly Healy</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-bad"><iconify-icon inline icon="ph:x-circle-fill"></iconify-icon>&nbsp;Expired</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Greig Munson</th>
+							<td>Development</td>
+							<td><span class="user-status status-warning"><iconify-icon inline icon="ph:warning-circle-fill"></iconify-icon>&nbsp;Update due</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Richard Goodall</th>
+							<td>Warehouse</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Thomas Healy</th>
+							<td>Warehouse</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Graham Pipes</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-unknown"><iconify-icon inline icon="ph:question-fill"></iconify-icon>&nbsp;No key</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Emma Mulhall</th>
+							<td>Development</td>
+							<td><span class="user-status status-good"><iconify-icon inline icon="ph:check-circle-fill"></iconify-icon>&nbsp;Active</span></td>
+						</tr>
+						<tr>
+							<td><iconify-icon class="checkbox" inline icon="ph:square"></iconify-icon></td>
+							<th scope="row">Jordan Farrar</th>
+							<td>Main Office</td>
+							<td><span class="user-status status-alert"><iconify-icon inline icon="ph:clock-fill"></iconify-icon>&nbsp;Out of sync</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div id="panel-2" class="main-tab-body" role="tabpanel" aria-labelledby="tab-2" style="display: none;">
+			<div class="content-toolbar" role="toolbar">
+				
+			</div>
+		</div>
+	</main>
+</body>
+</html> 

@@ -1,0 +1,665 @@
+/* || VARIABLES */
+
+:root
+{
+
+	/* || DIMENSIONS */
+
+	--margin: 7px;
+	--margin-small: 4px;
+	--radius: 5px;
+
+	/* || LIGHT MODE */
+
+	--blue: #0BA1B7;
+	--blue-mid: #0BA1B74D;
+	--blue-light: #0BA1B70D;
+	--green: #78C1AD;
+	
+	--text: #515050;
+	--text-light: #515050B3;
+	--body: #FFFFFF;
+	--background: #f4f4f4;
+	--border: #EEE;
+	--hover: #00000012;
+
+	--good: #35A65C;
+	--bad: #C10000;
+	--warning: #FF8F00;
+	--alert: #EE4300;
+	--unknown: #1A8CD0;
+
+	--good-transparent: #35A65C12;
+	--bad-transparent: #C1000012;
+	--warning-transparent: #FF8F0012;
+	--alert-transparent: #EE430012;
+	--unknown-transparent: #1A8CD012;
+
+	--shadow: 0px 0px 2px 2px #0000001F;
+
+	/* || DARK MODE */
+
+	/*
+	--blue: #0BA1B7;
+	--blue-mid: #52C4D54D;
+	--blue-light: #00DEFF0D;
+	--green: #78C1AD;
+
+	--text: #eee;
+	--text-light: #D5D5D5B2;
+	--body: #2b2a2a;
+	--background: #1e1d1d;
+	--border: #393939;
+	--hover: #FFFFFF12;
+
+	--good: #5EDB89;
+	--bad: #FB4141;
+	--warning: #F7A945;
+	--alert: #FF743E;
+	--unknown: #5CBFFB;
+
+	--good-transparent: #5EDB8921;
+	--bad-transparent: #FB414121;
+	--warning-transparent: #F7A94521;
+	--alert-transparent: #FF743E21;
+	--unknown-transparent: #5CBFFB21;
+
+	--shadow: 0px 0px 2px 2px #0000001F;
+	*/
+}
+
+/* || GENERAL STYLES */
+
+*
+{
+	font-family: inherit;
+}
+
+*:focus-visible
+{
+	outline: var(--text) solid 2px;
+	z-index: 1;
+}
+
+::placeholder
+{
+	font-style: italic;
+	color: var(--text-light);
+}
+
+iconify-icon
+{
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+
+	font-size: 1.25em;
+	line-height: .05em;
+
+	vertical-align: -.2em;
+}
+
+html
+{
+	box-sizing: border-box;
+
+	overflow: hidden;
+
+	color: var(--text)
+}
+
+body
+{
+	box-sizing: border-box;
+	margin: 0px;
+	font-family: Calibri;
+	background-color: var(--background);
+}
+
+h2
+{
+	font-size: 32px;
+  	font-style: normal;
+  	letter-spacing: 0.05em;
+  	font-weight: 400;
+  	margin: 0px;
+  	display: block;
+  	width: 100%;
+  	height: 45px;
+  	border-bottom: 1px solid var(--border);
+}
+
+a, button
+{
+	text-decoration: none;
+	color: inherit;
+	text-wrap: nowrap;
+	overflow: hidden;
+}
+
+a span, button span
+{
+	margin-left: 10px;
+}
+
+table caption
+{
+	display: ;
+}
+
+
+/* || HEADER */
+
+header
+{
+	box-sizing: inherit;
+	display: block;
+
+	position: fixed;
+	width: calc(100% - (var(--margin) * 2));
+	height: 70px;
+	padding: 18px 18px;
+	margin: 0px var(--margin);
+
+	background-color: var(--blue);
+	background-image: linear-gradient(150deg, var(--blue) 10%, var(--body) 70%);
+	border-radius: 0px 0px var(--radius) var(--radius);
+	box-shadow: var(--shadow);
+
+	color: var(--text);
+}
+
+header > *
+{
+	box-sizing: inherit;
+	display: inline-block;
+	height: 100%;
+	width: auto;
+}
+
+#header-nav
+{
+	float: right;
+	display: flex;
+	flex-direction: row-reverse;
+
+	height: 100%;
+	align-items: center;
+
+	border-radius: var(--radius);
+
+	transition: width 0.2s ease-in-out;
+}
+
+#header-nav button
+{
+	width: 140px;
+	height: 34px;
+	border: 0px;
+	border-left: 1px solid var(--border);
+	background-color: transparent;
+
+	text-align: center;
+	align-content: center;
+
+	transition: width 0.2s ease-in-out;
+}
+
+#header-nav button:hover
+{
+	background-color: var(--hover);
+	cursor: pointer;
+}
+
+#header-nav button:first-child
+{
+	border-radius: 0px var(--radius) var(--radius) 0px;
+}
+
+#header-nav button:last-child
+{
+	border-left: 0;
+	border-radius: var(--radius) 0px 0px var(--radius);
+}
+
+#header-nav button span
+{
+	font-size: 15px;
+	height: 34px;
+	line-height: 34px;
+}
+
+/* || SIDEBAR */
+
+#sidebar
+{
+	box-sizing: inherit;
+	display: flex;
+	overflow-y: overlay;
+	overflow-x: hidden;
+
+	position: fixed;
+	width: 220px;
+	max-height: calc(100% - 70px);
+	height: 100%;
+	padding: var(--margin);
+	margin-top: 70px;
+
+	flex-direction: column;
+
+	transition: width 0.2s ease-in-out;
+}
+
+#sidebar div
+{
+	display: block;
+}
+
+#sidebar div:last-child
+{
+	margin-top: var(--margin);
+}
+
+#sidebar div a
+{
+	display: block;
+	color: var(--text);
+	padding: 10px;
+	border-radius: var(--radius);
+	font-size: 16px;
+	text-wrap: nowrap;
+
+	margin-bottom: var(--margin);
+
+
+	transition: border-radius 0.2s ease-in-out;
+}
+
+#sidebar div a:last-child
+{
+	margin-bottom: 0px;
+}
+
+#sidebar div a.cur
+{
+	pointer-events: none;
+
+	color: white;
+	background-color: var(--blue);
+	box-shadow: var(--shadow);
+}
+
+#sidebar div a:hover
+{
+	background-color: var(--hover);
+}
+
+#upper-nav
+{
+	margin-bottom: auto;
+}
+
+/* || MAIN PAGE CONTENT */
+
+main
+{
+	box-sizing: inherit;
+	display: block;
+
+	position: fixed;
+	max-height: calc(100% - 70px - var(--margin));
+	min-height: fit-content;
+	height: calc(100% - 70px - var(--margin));
+	width: calc(100% - 220px - var(--margin));
+	margin-top: calc(70px + var(--margin));
+	margin-left: 220px;
+
+
+	transition: width 0.2s ease-in-out, margin-left 0.2s ease-in-out;
+}
+
+/* Styling to be used if the 'main' element contains all of the page content */
+.main-content
+{
+	box-sizing: inherit;
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	padding: 12px 20px;
+
+	background-color: var(--body);
+	border-radius: var(--radius) var(--radius) 0px 0px;
+	box-shadow: var(--shadow);
+}
+
+
+/* || TAB NAVIGATION */
+
+.main-tab-bar
+{
+	display: flex;
+	gap: var(--margin);
+	height: 44px;
+}
+
+.main-tab-bar button
+{
+	box-sizing: inherit;
+	display: inline-block;
+	overflow: hidden;
+
+	height: 100%;
+	width: 220px;
+	padding: 0px;
+
+	background-color: transparent;
+	border: 0;
+	border-radius: var(--radius) var(--radius) 0px 0px;
+	clip-path: inset(-4px -4px 0px -4px);
+
+	font-size: 21px;
+  	font-style: normal;
+  	letter-spacing: 0.005em;
+  	font-weight: 400;
+  	color: var(--text-light);
+  	text-wrap: nowrap;
+
+  	cursor: pointer;
+
+	transition: width 0.2s ease-in-out;
+}
+
+.main-tab-bar button.cur
+{
+	pointer-events: none;
+
+	background-color: var(--body);
+	box-shadow: var(--shadow);
+
+  	color: var(--text);
+}
+
+.main-tab-bar button:hover
+{
+	background-color: var(--hover);
+
+	color: inherit;
+}
+
+.main-tab-bar button iconify-icon
+{
+	margin-right: 10px;
+}
+
+#panel-1
+{
+	border-top-left-radius: 0px;
+}
+
+.main-tab-body
+{
+	box-sizing: inherit;
+	overflow: hidden;
+
+	height: calc(100% - 44px);
+	width: 100%;
+
+	background-color: var(--body);
+	border-radius: var(--radius) var(--radius) 0px 0px;
+	box-shadow: var(--shadow);
+}
+
+.main-tab-content
+{
+	overflow: auto;
+	height: calc(100% - 48px);
+	padding: 0px 20px;
+}
+
+/* || TOOLBAR */
+
+.content-toolbar
+{
+	position: relative;
+	box-sizing: inherit;
+	z-index: 1;
+	display: flex;
+
+	height: 48px;
+	padding: 12px 20px 0px 20px;
+	gap: var(--margin-small);
+
+	background-color: var(--body);
+
+	color: var(--text);
+}
+
+.content-toolbar > *
+{
+	transition: flex-basis 0.2s ease-in-out;
+
+	color: var(--text);
+	font-size: 14px;
+
+	border-radius: var(--radius);
+}
+
+.content-toolbar button
+{	
+	box-sizing: border-box;
+	overflow: hidden;
+
+	flex: 0 0 86px;
+	padding: 0px;
+
+	background-color: var(--body);
+	border: var(--border) 1px solid;
+
+	cursor: pointer;
+}
+
+.content-toolbar button span
+{
+	margin-left: 6px;
+}
+
+.content-toolbar button:hover
+{
+	background-color: var(--hover);
+}
+
+.content-toolbar .search-box
+{
+	display: flex;
+	width: 220px;
+	gap: 0px;
+	margin-left: auto;
+}
+
+.content-toolbar .search-box button
+{
+	flex: 0 0 36px;
+	aspect-ratio: 1/1;
+
+  	border-radius: 0px var(--radius) var(--radius) 0px;
+  	border-left: 0px;
+}
+
+.content-toolbar .search-box input
+{
+	flex: 1 1;
+	overflow: hidden;
+
+	width: calc(100% - 36px);
+	padding: 0px 0px 0px 10px;
+	background-color: var(--body);
+	border: var(--border) 1px solid;
+	border-radius: var(--radius) 0px 0px var(--radius);
+  	border-right: 0px;
+}
+
+/* || RECORD TABLE */
+
+.record-list
+{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.record-list tbody
+{
+	height: calc(100% - 92px);
+}
+
+.record-list thead th
+{
+	position: sticky;
+	top: 0px;
+
+	background-color: var(--body);
+	border-bottom: none;
+	box-shadow: inset 0 -2px 0 var(--blue);
+
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.record-list th, .record-list td
+{
+	text-align: left;
+	padding: 14px 8px;
+
+	font-weight: normal;
+	font-size: 15px;
+
+	border-bottom: var(--border) solid 1px;
+}
+
+.record-list tbody tr:hover
+{
+	cursor: pointer;
+  	background-color: var(--hover);
+}
+
+.record-list tbody tr.cur
+{
+	background-color: var(--blue-light);
+}
+
+.record-list tbody tr.cur td, .record-list tbody tr.cur th
+{
+	border-top: var(--blue-mid) double 1px;
+	border-bottom: var(--blue-mid) double 1px;
+}
+
+.record-list .checkbox /* checkboxes */
+{
+	font-size: 22px;
+	padding: 0px;
+	margin: -2px -1px;
+	display: block;
+	color: var(--text-light);
+}
+
+.record-list .checkbox-checked
+{
+	font-size: 22px;
+	padding: 0px;
+	margin: -2px -1px;
+	display: block;
+	color: var(--blue);
+}
+
+/* || STATUS */
+
+.user-status
+{
+	display: inline-block;
+
+	width: 90px;
+	padding: 1px;
+	margin: -2px 0px;
+
+	border: var(--text) solid 1px;
+	border-radius: 15px;
+
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.user-status.status-good
+{
+	color: var(--good);
+	border-color: var(--good);
+	background-color: var(--good-transparent);
+}
+
+.user-status.status-bad
+{
+	color: var(--bad);
+	border-color: var(--bad);
+	background-color: var(--bad-transparent);
+}
+
+.user-status.status-warning
+{
+	color: var(--warning);
+	border-color: var(--warning);
+	background-color: var(--warning-transparent);
+}
+
+.user-status.status-alert
+{
+	color: var(--alert);
+	border-color: var(--alert);
+	background-color: var(--alert-transparent);
+}
+
+.user-status.status-unknown
+{
+	color: var(--unknown);
+	border-color: var(--unknown);
+	background-color: var(--unknown-transparent);
+}
+
+/* || COLLAPSING */
+
+@media screen and (max-width: 768px)
+{
+	a span, button span, .main-tab-bar button iconify-icon
+	{
+		display: none;
+	}
+
+	#header-nav button
+	{
+		width: 34px;
+	}
+
+	#sidebar
+	{
+		width: 54px;
+	}
+
+	#sidebar div a
+	{
+		border-radius: 25px;
+	}
+
+	main
+	{
+		width: calc(100% - 54px - var(--margin));
+		margin-left: 54px;
+	}
+
+	.main-tab-bar button
+	{
+		width: 180px;
+	}
+
+	.content-toolbar > button
+	{
+		flex: 0 0 36px;
+		aspect-ratio: 1/1;
+	}
+}
