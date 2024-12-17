@@ -9,9 +9,43 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="common.css">
-	<link rel="stylesheet" href="dashboard.css">
+	<link rel="stylesheet" href="light.css" id="theme" class="light">
 
 	<script src="https://code.iconify.design/iconify-icon/2.2.0/iconify-icon.min.js"></script>
+
+	<script>
+		const theme = document.getElementById("theme");
+
+		function switchTheme()
+		{
+		    (theme.className == "light") ? darkTheme() : lightTheme()
+		}
+
+		function lightTheme()
+		{
+			if (theme.className == "dark")
+			{
+				theme.href = "light.css";
+				theme.className = "light";
+
+				document.getElementById("dark-icon").style.display = "none";
+				document.getElementById("light-icon").style.display = "inline-block";
+			}
+		}
+
+		function darkTheme()
+		{
+			if (theme.className == "light")
+			{
+				theme.href = "dark.css";
+				theme.className = "dark";
+
+				document.getElementById("light-icon").style.display = "none";
+				document.getElementById("dark-icon").style.display = "inline-block";
+			}
+		}
+
+	</script>
 	
 </head>
 <body>
@@ -21,6 +55,7 @@
 			<button href="#"><iconify-icon inline icon="ph:sign-out"></iconify-icon><span>Log out</span></button>
 			<button href="#"><iconify-icon inline icon="ph:sliders-horizontal"></iconify-icon><span>Settings</span></button>
 			<button href="#"><iconify-icon inline icon="ph:bell"></iconify-icon><span>Notifications</span></button>
+			<button href="#" id="theme-button" onclick="switchTheme()"><iconify-icon inline icon="ph:sun" id="light-icon"></iconify-icon><iconify-icon inline icon="ph:moon-stars" id="dark-icon" style="display: none;"></iconify-icon><span>Theme</span></button>
 		</nav>
 	</header>
 
@@ -326,4 +361,4 @@
 		</div>
 	</main>
 </body>
-</html> 
+</html>
