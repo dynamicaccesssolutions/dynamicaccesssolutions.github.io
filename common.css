@@ -106,6 +106,7 @@ header
 	height: 70px;
 	padding: 18px 18px;
 	margin: 0px var(--margin);
+	z-index: 1;
 
 	background-color: var(--blue);
 	background-image: linear-gradient(150deg, var(--blue) 10%, var(--body) 70%);
@@ -181,7 +182,7 @@ header > *
 {
 	box-sizing: inherit;
 	display: flex;
-	overflow-y: overlay;
+	overflow-y: auto;
 	overflow-x: hidden;
 
 	position: fixed;
@@ -194,6 +195,14 @@ header > *
 	flex-direction: column;
 
 	transition: width 0.2s ease-in-out;
+
+	scrollbar-width: none;
+	scrollbar-color: var(--text-lighter) transparent;
+}
+
+#sidebar:hover
+{
+	scrollbar-width: thin;
 }
 
 #sidebar div
@@ -360,21 +369,24 @@ main
 .main-tab-content
 {
 	overflow: auto;
-	height: calc(100% - 48px);
+	height: 100%;
 	padding: 0px 20px;
+
+	scrollbar-color: var(--text-lighter) transparent;
 }
 
 /* || TOOLBAR */
 
 .content-toolbar
 {
-	position: relative;
+	position: sticky;
+	top: 0px;
 	box-sizing: inherit;
 	z-index: 1;
 	display: flex;
 
-	height: 48px;
-	padding: 12px 20px 0px 20px;
+	height: 36px;
+	padding-top: 12px;
 	gap: var(--margin-small);
 
 	background-color: var(--body);
@@ -444,6 +456,8 @@ main
 	border: var(--border) 1px solid;
 	border-radius: var(--radius) 0px 0px var(--radius);
   	border-right: 0px;
+
+  	color: var(--text);
 }
 
 /* || RECORD TABLE */
@@ -462,7 +476,7 @@ main
 .record-list thead th
 {
 	position: sticky;
-	top: 0px;
+	top: 48px;
 
 	background-color: var(--body);
 	border-bottom: none;
@@ -586,6 +600,7 @@ main
 	#sidebar div a
 	{
 		border-radius: 25px;
+		width: 20px;
 	}
 
 	main
